@@ -50,6 +50,9 @@ fun Project.applyLibrariesConfiguration() {
             exclude(dependency("org.checkerframework:checker-qual"))
             exclude(dependency("org.apache.logging.log4j:log4j-api"))
             exclude(dependency("com.google.code.findbugs:jsr305"))
+            exclude {
+                it.moduleGroup == "org.jetbrains.kotlin"
+            }
         }
 
         relocations.forEach { (from, to) ->
